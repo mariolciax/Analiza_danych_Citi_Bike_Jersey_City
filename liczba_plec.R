@@ -13,19 +13,7 @@ head(marzec20)
 library("data.table")
 library("dplyr")
 library("RColorBrewer")
-dane <- styczen19$start.station.name[match(marzec19$birth.year,marzec20$birth.year)]
-pods <- table(dane)
-pods <-c(pods[pods>1990], Inne=sum(pods[pods <=2001]))
-pie(pods, col=brewer.pal(length(pods), "Greys")[order(pods)])
 
-styczen19.rows.count()
-y <- c(marzec19$gender , marzec20$gender )
-pie(y)# wykres ko³owy:
-
-barplot(as.matrix(styczen19), gender= c(1,2))
-
-
-hist(styczen20$birth.year, las=1)
 
 
 styczen19_gender <- select(styczen19, gender)
@@ -60,9 +48,9 @@ marzec19_gender<- select(marzec19_gender, n)
 marzec19_gender <- rename(marzec19_gender, marzec19_plec = n)
 
 
-barplot(as.matrix(pods), main="Liczba u¿ytkowników z podzia³em na p³eæ",
+barplot(as.matrix(pods), main="Liczba uÂ¿ytkownikÃ³w z podziaÂ³em na pÂ³eÃ¦",
         names.arg = c("styczen19", "styczen20", "marzec19", "marzec20"),
-        ylab="Liczba u¿ytkowników", col=c("sandybrown","lightblue4", "indianred1"))
+        ylab="Liczba uÂ¿ytkownikÃ³w", col=c("sandybrown","lightblue4", "indianred1"))
 
-legend(x=3.8, y=26600, cex=0.4,pch=c(15,15,15),legend=c("Nie okreœlono","Mê¿czyzna", "Kobieta"), 
+legend(x=3.8, y=26600, cex=0.4,pch=c(15,15,15),legend=c("Nie okreÅ“lono","MÃªÂ¿czyzna", "Kobieta"), 
        col=c("sandybrown","lightblue4", "indianred1"),)
