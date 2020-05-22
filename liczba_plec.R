@@ -47,7 +47,7 @@ marzec19_gender<- marzec19_gender %>%
 marzec19_gender<- select(marzec19_gender, n)
 marzec19_gender <- rename(marzec19_gender, marzec19_plec = n)
 
-
+pods <- cbind(styczen19_gender, styczen20_gender, marzec19_gender, marzec20_gender)
 barplot(as.matrix(pods), main="Liczba u¿ytkowników z podzia³em na p³eæ",
         names.arg = c("styczen19", "styczen20", "marzec19", "marzec20"),
         ylab="Liczba u¿ytkowników", col=c("sandybrown","lightblue4", "indianred1"))
