@@ -8,7 +8,6 @@ marzec19<-read.csv("JC-201903-citibike-tripdata.csv")
 library("data.table")
 library("dplyr")
 library("RColorBrewer")
-library("plotly")
 
 styczen19_gender <- select(styczen19, gender)
 styczen19_gender<- styczen19_gender %>%
@@ -60,12 +59,10 @@ luty19_gender <- rename(luty19_gender, luty19_plec = n)
 pods <- cbind(styczen19_gender, luty19_gender, marzec19_gender,
               styczen20_gender, luty20_gender, marzec20_gender)
 plot.window(4.5,2.5)
-par(mar=c(1,1,0.5,1), mfrow=c(1,2),oma=c(1,1,1,5),xpd=NA)
+par(mar=c(2,2,2,1), mfrow=c(1,2),oma=c(0,1,1,1),xpd=NA)
 barplot(as.matrix(pods),
-        main="Liczba uzytkowników z podzialem na plec", 
-        names.arg = c("styczen19","luty19", "marzec19","styczen20","luty20", "marzec20"),
-        ylab="Liczba uzytkowników", col=c("sandybrown","lightblue4", "indianred1"),
+        main="Liczba uzytkownikÃ³w z podzialem na plec", 
+        names.arg = c("styczen \n 2019","luty \n 2019", "marzec \n 2019","styczen \n 2020","luty \n 2020", "marzec \n 2020"),
+        ylab="Liczba uzytkownikÃ³w", col=c("sandybrown","lightblue4", "indianred1"),
         ylim = c(0, 26000), xlim = c(0,7))
 legend(7.5,20000,legend=c("Nie okreslono","Mezczyzna", "Kobieta"),fill=c("sandybrown","lightblue4", "indianred1"),bty = "n")
-
-
