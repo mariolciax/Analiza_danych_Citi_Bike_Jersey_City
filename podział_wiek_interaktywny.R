@@ -27,10 +27,10 @@ t<-full_join(m18,t,by=c("birth.year"="birth.year"))
 t<-mutate(t,marzec_2018=ifelse(is.na(marzec_2018),0,marzec_2018))
 t<-mutate(t,marzec_2019=ifelse(is.na(marzec_2019),0,marzec_2019))
 t<-mutate(t,marzec_2020=ifelse(is.na(marzec_2020),0,marzec_2020))
-t<-rename(t,rok_urodzenia=birth.year)
-t<-arrange(t,rok_urodzenia)
+t<-rename(t,wiek=birth.year)
+t<-arrange(t,wiek)
 
 
-m1<-mPlot(x="rok_urodzenia",y=c("marzec_2018","marzec_2019","marzec_2020"),type="Line",
+m1<-mPlot(x="wiek",y=c("marzec_2018","marzec_2019","marzec_2020"),type="Line",
           data=t,pointSize=0, lineWidth=2)
 m1
