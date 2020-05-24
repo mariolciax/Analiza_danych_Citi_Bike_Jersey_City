@@ -77,7 +77,7 @@ names(dane) <- c("marzec 2020","marzec 2019","styczen 2020")
 
 map3 <- Leaflet$new()
 map3$setView(c(40.715, -74.05), zoom = 13)
-map3$marker(c(m19_sz1,m19_dl1), bindPopup = "<p> as.character(unlist(marzec19_station[1,1]) </p>")
+map3$marker(c(m19_sz1,m19_dl1), bindPopup = "<p> marzec19_1stacja </p>")
 map3$marker(c(m19_sz2,m19_dl2), bindPopup = "<p> marzec2019_2stacja </p>")
 map3$marker(c(m20_sz1,m20_dl1), bindPopup = "<p> marzec2020_1stacja </p>")
 map3$marker(c(m20_sz2,m20_dl2), bindPopup = "<p> marzec2020_2stacja </p>")
