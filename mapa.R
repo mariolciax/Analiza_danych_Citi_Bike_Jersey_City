@@ -30,9 +30,10 @@ m19<-as.data.frame(m19)
 x<-nrow(m19)
 m19_sz1<-m19[1,7]
 m19_dl1<-m19[1,8]
+m19_name1<-m19[1,1]
 m19_sz2<-m19[x-1,7]
 m19_dl2<-m19[x-1,8]
-
+m19_name2<-m19[x-1,1]
 marzec20_station <- select(marzec20, start.station.name, end.station.name)
 marzec20_station_a<- as.vector(select(marzec20, start.station.name))
 marzec20_station_b<- as.vector(select(marzec20, end.station.name))
@@ -48,9 +49,10 @@ m20<-as.data.frame(m20)
 y<-nrow(m20)
 m20_sz1<-m20[1,7]
 m20_dl1<-m20[1,8]
+m20_name1<-m20[1,1]
 m20_sz2<-m20[y-1,7]
 m20_dl2<-m20[y-1,8]
-
+m20_name2<-m20[y-1,1]
 
 styczen20_station <- select(styczen20, start.station.name, end.station.name)
 styczen20_station_a<- as.vector(select(styczen20, start.station.name))
@@ -68,18 +70,19 @@ s20<-as.data.frame(s20)
 z<-nrow(s20)
 s20_sz1<-s20[1,7]
 s20_dl1<-s20[1,8]
+s20_name1<-s20[1,1]
 s20_sz2<-s20[z-1,7]
 s20_dl2<-s20[z-1,8]
-
+s20_name2<-s20[z-1,1]
 dane <- c(marzec20_station$n, marzec19_station$n, styczen20_station$n)
 
 names(dane) <- c("marzec 2020","marzec 2019","styczen 2020")
-
 map3 <- Leaflet$new()
-map3$setView(c(40.715, -74.05), zoom = 13)
-map3$marker(c(m19_sz1,m19_dl1), bindPopup = "<p> marzec19_1stacja </p>")
-map3$marker(c(m19_sz2,m19_dl2), bindPopup = "<p> marzec2019_2stacja </p>")
-map3$marker(c(m20_sz1,m20_dl1), bindPopup = "<p> marzec2020_1stacja </p>")
-map3$marker(c(m20_sz2,m20_dl2), bindPopup = "<p> marzec2020_2stacja </p>")
-map3$marker(c(s20_sz1,s20_dl1), bindPopup = "<p> styczen2020_1stacja </p>")
-map3$marker(c(s20_sz2,s20_dl2), bindPopup = "<p> styczen2020_2stacja </p>")
+map3$setView(c(40.715, -74.077), zoom = 13)
+map3$marker(c(m19_sz1,m19_dl1), bindPopup = m19_name1)
+map3$marker(c(m19_sz2,m19_dl2), bindPopup = m19_name2)
+map3$marker(c(m20_sz1,m20_dl1), bindPopup = m20_name1)
+map3$marker(c(m20_sz2,m20_dl2), bindPopup = m20_name2)
+map3$marker(c(s20_sz1,s20_dl1), bindPopup = s20_name1)
+map3$marker(c(s20_sz2,s20_dl2), bindPopup = s20_name2)
+map3
