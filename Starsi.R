@@ -21,7 +21,7 @@ wiek1<-function(df1=marzec19_JC,df2=marzec20_JC,...){
   starsi60_20<-nrow(filter(m20, birth.year<=1959))
   procent_starsi_20<-(starsi60_20/wszyscy_20)*100
   par(mfcol=c(1,3))
-  barplot(c(wszyscy_18,wszyscy_19,wszyscy_20), main="Liczba użytkowników",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab="Liczba użytkowników",col=c("mediumaquamarine","plum3","tan2"))
-  barplot(c(starsi60_18,starsi60_19,starsi60_20),main="Liczba użytkowników \n powyżej 60 roku życia",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab="Liczba użytkowników",col=c("mediumaquamarine","plum3","tan2"))
-  barplot(c(procent_starsi_18,procent_starsi_19,procent_starsi_20),main="Procentowy udział użytkowników \n powyżej 60 roku życia",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab = "Procentowy udział",col=c("mediumaquamarine","plum3","tan2"))
+  barplot(c(wszyscy_18,wszyscy_19,wszyscy_20), main="Liczba wypożyczeń",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab="Liczba wypożyczeń",col=c("mediumaquamarine","plum3","tan2"))
+  barplot(c(starsi60_18,starsi60_19,starsi60_20),main="Liczba wypożyczeń \n użytkowników \n powyżej 60 roku życia",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab="Liczba wypożyczeń",col=c("mediumaquamarine","plum3","tan2"))
+  barplot(c(procent_starsi_18,procent_starsi_19,procent_starsi_20),main="Procentowy udział \n wypożyczeń użytkowników \n powyżej 60 roku życia",names.arg = c("marzec \n 2018","marzec \n 2019","marzec \n 2020"),ylab = "Procentowy udział",col=c("mediumaquamarine","plum3","tan2"))
 }
