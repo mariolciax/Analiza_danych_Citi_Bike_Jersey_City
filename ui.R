@@ -7,8 +7,8 @@ shinyUI(pageWithSidebar(
                 label = "Wybierz plec",
                 choices = c("kobieta", "mezczyzna","nie podano"),
                 selected = "mezczyzna"),
-    sliderInput("zakres", "Jaki czas:",
-                min = 0, max = 2000000, value = c(0,2000000), step= 50)),
+    sliderInput("zakres", "Jaki czas (sekundy):",
+                min = 0, max = 36000, value = c(0,36000), step= 300)),
   mainPanel(
     tabsetPanel(
       tabPanel("Histogram", plotOutput("wyjscieHistogram")),
