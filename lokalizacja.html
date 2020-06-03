@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<p>&lt;!doctype HTML&gt; <meta charset="utf-8"> <html> <head></p>
+<pre><code>&lt;link rel=&#39;stylesheet&#39; href=&#39;leaflet/external/leaflet.css&#39;&gt;
+
+&lt;link rel=&#39;stylesheet&#39; href=&#39;leaflet/external/leaflet-rCharts.css&#39;&gt;
+
+&lt;link rel=&#39;stylesheet&#39; href=&#39;leaflet/external/legend.css&#39;&gt;
+
+
+
+&lt;script src=&#39;leaflet/external/leaflet.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+
+&lt;script src=&#39;leaflet/external/leaflet-providers.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+
+&lt;script src=&#39;leaflet/external/Control.FullScreen.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+
+
+&lt;style&gt;
+.rChart {
+  display: block;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 800px;
+  height: 400px;
+}  
+&lt;/style&gt;</code></pre>
+<p></head> <body></p>
+<pre><code>&lt;div id = &#39;chart7db831644a8&#39; class = &#39;rChart leaflet&#39;&gt;&lt;/div&gt;    
+&lt;script&gt;</code></pre>
+<p>var spec = { &quot;dom&quot;: &quot;chart7db831644a8&quot;, &quot;width&quot;: 800, &quot;height&quot;: 400, &quot;urlTemplate&quot;: &quot;http://{s}.tile.osm.org/{z}/{x}/{y}.png&quot;, &quot;layerOpts&quot;: { &quot;attribution&quot;: &quot;Map data<a href="\&quot;http://openstreetmap.org\&quot;">OpenStreetMap</a>\n contributors, Imagery<a href="\&quot;http://mapbox.com\&quot;">MapBox</a>&quot; }, &quot;center&quot;: [ 40.715, -74.077 ], &quot;zoom&quot;: 13, &quot;id&quot;: &quot;chart7db831644a8&quot; }</p>
+<p>var map = L.map(spec.dom, spec.mapOpts)</p>
+<pre><code>map.setView(spec.center, spec.zoom);
+
+
+
+if (spec.provider){
+  L.tileLayer.provider(spec.provider).addTo(map)    
+} else {
+      L.tileLayer(spec.urlTemplate, spec.layerOpts).addTo(map)
+}
+ 
+L</code></pre>
+<p>.marker([ 40.71959, -74.04312 ]) .addTo( map ) .bindPopup(&quot;Grove St PATH&quot;) L .marker([ 40.7276, -74.04425 ]) .addTo( map ) .bindPopup(&quot;Hamilton Park&quot;) L .marker([ 40.71959, -74.04312 ]) .addTo( map ) .bindPopup(&quot;Grove St PATH&quot;) L .marker([ 40.7276, -74.04425 ]) .addTo( map ) .bindPopup(&quot;Hamilton Park&quot;) L .marker([ 40.71959, -74.04312 ]) .addTo( map ) .bindPopup(&quot;Grove St PATH&quot;) L .marker([ 40.7309, -74.06391 ]) .addTo( map ) .bindPopup(&quot;Sip Ave&quot;)</p>
+<pre><code>if (spec.circle2){
+  for (var c in spec.circle2){
+    var circle = L.circle(c.center, c.radius, c.opts)
+     .addTo(map);
+  }
+}</code></pre>
+</script>
+<pre><code>&lt;script&gt;&lt;/script&gt;    </code></pre>
+<p></body> </html></p>
